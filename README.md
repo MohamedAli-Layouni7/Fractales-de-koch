@@ -21,9 +21,9 @@ Ce projet implémente un générateur de fractales de Koch en C++ moderne (C++20
 ## Exemples de fractales générées
 
 <p align="center">
-  <img src="docs/koch_1_3_7.svg" alt="Koch — base 1, secondaire 3, ordre 7" width="300"/>
   <img src="docs/koch_2_3_7.svg" alt="Koch — base 2, secondaire 3, ordre 7" width="300"/>
   <img src="docs/koch_2_6_4.svg" alt="Koch — base 2, secondaire 6, ordre 4" width="300"/>
+  <img src="docs/koch_1_3_7.svg" alt="Koch — base 1, secondaire 3, ordre 7" width="300"/>
 </p>
 
 *De gauche à droite : polygone de base 1/secondaire 3/ordre 7 · base 2/secondaire 3/ordre 7 · base 2/secondaire 6/ordre 4*
