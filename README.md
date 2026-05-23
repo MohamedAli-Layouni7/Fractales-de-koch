@@ -54,14 +54,6 @@ où `θ` est l'angle extérieur du polygone central.
 
 ---
 
-## Architecture du code
-
-```
-koch_fractal/
-├── code.cpp              # Source principal
-└── out.svg               # Fichier SVG généré (après exécution)
-```
-
 ### Classes principales
 
 **`point<T>`** — Vecteur 2D avec opérateurs arithmétiques surchargés (`+`, `-`, `*` scalaire). Passage par référence constante pour éviter les copies inutiles.
