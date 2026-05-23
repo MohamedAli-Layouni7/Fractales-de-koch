@@ -32,25 +32,21 @@ Ce projet implémente un générateur de fractales de Koch en C++ moderne (C++20
 
 ## Propriétés mathématiques
 
-Le nombre de segments après `P` itérations est donné par :
+Le nombre de segments après $P$ itérations est donné par :
 
-```
-N = K · (O + 1)^P
-```
+$$N = K \cdot (O + 1)^P$$
 
-où `K` est le nombre de segments initiaux et `O` l'ordre du polygone secondaire.
+où $K$ est le nombre de segments initiaux et $O$ l'ordre du polygone secondaire.
 
-Le nombre de points est `Q = N + 1` (premier et dernier points confondus pour une courbe fermée).
+Le nombre de points est $Q = N + 1$ (premier et dernier points confondus pour une courbe fermée).
 
-À chaque itération, le saut dans le tableau de points vaut `K · (O + 1)^(P − D)`, avec `D` la profondeur courante.
+À chaque itération, le saut dans le tableau de points vaut $K \cdot (O + 1)^{P - D}$, avec $D$ la profondeur courante.
 
 La position de chaque nouveau point est calculée récursivement par :
 
-```
-P_{n+1} = P_n + R(θ) · (P_{n−1} − P_n)
-```
+$$P_{n+1} = P_n + R(\theta) \cdot (P_{n-1} - P_n)$$
 
-où `θ` est l'angle extérieur du polygone central.
+où $\theta$ est l'angle extérieur du polygone central.
 
 ---
 
@@ -58,7 +54,7 @@ où `θ` est l'angle extérieur du polygone central.
 
 **`point<T>`** — Vecteur 2D avec opérateurs arithmétiques surchargés (`+`, `-`, `*` scalaire). Passage par référence constante pour éviter les copies inutiles.
 
-**`rotator`** — Calcule et met en cache `cos(θ)` et `sin(θ)` pour toute la durée de l'exécution. La rotation est appliquée via une fonction `inline`.
+**`rotator`** — Calcule et met en cache $\cos(\theta)$ et $\sin(\theta)$ pour toute la durée de l'exécution. La rotation est appliquée via une fonction `inline`.
 
 **`koch_fractal`** — Orchestre la construction de la courbe :
 - `create_initial_curve()` — initialise le polygone de base
@@ -72,7 +68,7 @@ La structure fractale est *embarrassingly parallel* : chaque segment à un nivea
 
 ### Calcul de la puissance entière
 
-La fonction `fast_power()` implémente l'exponentiation rapide (*fast exponentiation*) en O(log n), utilisée pour calculer le nombre total de segments.
+La fonction `fast_power()` implémente l'exponentiation rapide (*fast exponentiation*) en $O(\log n)$, utilisée pour calculer le nombre total de segments.
 
 ---
 
