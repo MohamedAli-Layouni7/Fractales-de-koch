@@ -26,7 +26,7 @@ Ce projet implémente un générateur de fractales de Koch en C++ moderne (C++20
   <img src="docs/koch_1_3_7.svg" alt="Koch — base 1, secondaire 3, ordre 7" width="300"/>
 </p>
 
-*De gauche à droite : polygone de base 1/secondaire 3/ordre 7 · base 2/secondaire 3/ordre 7 · base 2/secondaire 6/ordre 4*
+*De gauche à droite : polygone de base 2/secondaire 3/ordre 7 · base 1/secondaire 3/ordre 7 · base 2/secondaire 6/ordre 4*
 
 ---
 
@@ -149,4 +149,4 @@ La variation standard du temps d'exécution:  X.XX millisecondes
 
 ## Licence
 
-Ce projet est distribué sous licence MIT. Voir le fichier `LICENSE` pour les détails.
+Ce projet est distribué sous licence GNU GENERAL PUBLIC LICENSE. Voir le fichier `LICENSE` pour les détails.
