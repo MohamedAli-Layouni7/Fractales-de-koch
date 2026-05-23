@@ -20,13 +20,12 @@ Ce projet implémente un générateur de fractales de Koch en C++ moderne (C++20
 
 ## Exemples de fractales générées
 
-<p align="center">
-  <img src="docs/koch_2_3_7.svg" alt="Koch — base 2, secondaire 3, ordre 7" width="300"/>
-  <img src="docs/koch_2_6_4.svg" alt="Koch — base 2, secondaire 6, ordre 4" width="300"/>
-  <img src="docs/koch_1_3_7.svg" alt="Koch — base 1, secondaire 3, ordre 7" width="300"/>
-</p>
-
-*De gauche à droite : polygone de base 2/secondaire 3/ordre 7 · base 1/secondaire 3/ordre 7 · base 2/secondaire 6/ordre 4*
+<p align="center"><img src="docs/koch_2_3_7.svg" alt="Koch — base 2, secondaire 3, ordre 7" width="100%"/></p>
+<p align="center"><b>Figure 1</b> — Polygone de base : 2, polygone secondaire : 3, ordre : 7</p>
+<p align="center"><img src="docs/koch_2_6_4.svg" alt="Koch — base 2, secondaire 6, ordre 4" width="100%"/></p>
+<p align="center"><b>Figure 2</b> — Polygone de base : 2, polygone secondaire : 6, ordre : 4</p>
+<p align="center"><img src="docs/koch_1_3_7.svg" alt="Koch — base 1, secondaire 3, ordre 7" width="100%"/></p>
+<p align="center"><b>Figure 3</b> — Polygone de base : 1, polygone secondaire : 3, ordre : 7</p>
 
 ---
 
@@ -106,14 +105,39 @@ frac.generate_svg(file);
 Le fichier `out.svg` est généré dans le répertoire courant.
 
 ---
+ 
+## Environnement de test
+ 
+| Propriété | Valeur |
+|-----------|--------|
+| **CPU** | AMD Athlon Silver 3050U with Radeon Graphics |
+| **Architecture** | x86_64 (32-bit, 64-bit) |
+| **Cœurs / Threads** | 2 cœurs, 1 thread par cœur |
+| **Fréquence** | 1400 MHz – 2300 MHz (boost activé) |
+| **L1d / L1i** | 64 KiB / 128 KiB |
+| **L2 / L3** | 1 MiB / 4 MiB |
+| **Virtualisation** | AMD-V |
+| **Extensions SIMD** | SSE4.1, SSE4.2, AVX, AVX2, FMA, AES |
+ 
+---
 
 ## Performance
 
-Le programme mesure le temps d'exécution moyen et l'écart-type sur plusieurs passes :
+Le programme mesure le temps d'exécution moyen et l'écart-type sur plusieurs passes avec les paramètres suivants:
+
+| Propriété | Valeur |
+|-----------|--------|
+| **Nombre de segments initiaux** | 2 |
+| **Ordre du polygone secondaire** | 7 |
+| **Profondeur de récursion** | 5 |
 
 ```
-Le temps d'exécution moyen:              X.XX millisecondes
-La variation standard du temps d'exécution:  X.XX millisecondes
+Sans OpenMP:
+Le temps d'exécution moyen:              2.76815 millisecondes
+La variation standard du temps d'exécution:  0.0260535 millisecondes
+Avec OpenMP:
+Le temps d'exécution moyen:              1.45342 millisecondes
+La variation standard du temps d'exécution:  0.469416 millisecondes
 ```
 
 ---
